@@ -469,3 +469,80 @@ Imagine a researcher investigating the effect of a new drug on blood pressure. T
 
 ## Summary
 P-hacking involves manipulating data analysis to obtain significant p-values, which undermines the validity of research findings. It can be mitigated through transparent and pre-registered research practices, as well as by correcting for multiple comparisons and emphasizing replication.
+# Bayesian Inference
+
+**Bayesian Inference** is a method of statistical inference in which Bayes' theorem is used to update the probability of a hypothesis as more evidence or information becomes available. It provides a mathematical framework for integrating prior knowledge with new data to make statistical conclusions.
+
+## Key Concepts
+
+### 1. Bayes' Theorem
+Bayes' theorem is the foundation of Bayesian inference. It relates the conditional and marginal probabilities of random events. The formula is:
+
+\[
+P(H|D) = \frac{P(D|H)P(H)}{P(D)}
+\]
+
+where:
+- \( P(H|D) \) is the posterior probability, the probability of the hypothesis \( H \) given the data \( D \).
+- \( P(D|H) \) is the likelihood, the probability of the data given the hypothesis.
+- \( P(H) \) is the prior probability, the initial probability of the hypothesis before seeing the data.
+- \( P(D) \) is the marginal likelihood, the probability of the data under all possible hypotheses.
+
+### 2. Prior Probability (\( P(H) \))
+Represents what is known about the hypothesis before observing the data. It can be based on previous studies, expert knowledge, or other sources of information.
+
+### 3. Likelihood (\( P(D|H) \))
+Represents how probable the observed data is under the hypothesis. It is the core of the data-generating process.
+
+### 4. Posterior Probability (\( P(H|D) \))
+Represents the updated probability of the hypothesis after considering the new data. It combines prior knowledge and the evidence provided by the data.
+
+### 5. Marginal Likelihood (\( P(D) \))
+Serves as a normalizing constant to ensure that the posterior probabilities sum to one. It is often computed by integrating over all possible hypotheses.
+
+## Bayesian Inference Process
+
+1. **Define the Prior:**
+   - Specify the prior distribution \( P(H) \) based on prior knowledge or assumptions about the hypothesis.
+
+2. **Collect Data:**
+   - Obtain the observed data \( D \).
+
+3. **Compute the Likelihood:**
+   - Determine the likelihood \( P(D|H) \) of observing the data under different hypotheses.
+
+4. **Apply Bayes' Theorem:**
+   - Use Bayes' theorem to update the prior distribution with the observed data, resulting in the posterior distribution \( P(H|D) \).
+
+5. **Make Inferences:**
+   - Use the posterior distribution to make probabilistic statements about the hypothesis or to make decisions.
+
+## Advantages of Bayesian Inference
+
+1. **Incorporates Prior Knowledge:**
+   - Allows for the integration of prior information or expert knowledge with new data.
+
+2. **Flexible and Iterative:**
+   - Can be updated as new data becomes available, providing a dynamic and flexible approach to inference.
+
+3. **Probabilistic Interpretation:**
+   - Provides a natural and intuitive way to express uncertainty in model parameters and predictions.
+
+4. **Handles Complex Models:**
+   - Suitable for complex models where traditional methods might struggle, particularly in hierarchical or multi-level models.
+
+## Applications of Bayesian Inference
+
+1. **Medical Diagnosis:**
+   - Updating the probability of disease presence based on test results and prior information.
+
+2. **Machine Learning:**
+   - Bayesian methods are used in various machine learning algorithms, including Bayesian networks and Gaussian processes.
+
+3. **Economics and Finance:**
+   - Updating economic models or financial predictions with new market data.
+
+4. **Scientific Research:**
+   - Incorporating prior studies and experimental data to refine hypotheses and models.
+
+Bayesian inference provides a robust framework for statistical analysis, emphasizing the iterative and probabilistic nature of real-world data and decision-making.
