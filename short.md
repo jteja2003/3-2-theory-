@@ -96,7 +96,7 @@ The shape of a **normalization curve**, often referring to a normal distribution
       - Iteratively assigns data points to clusters and updates cluster centroids.
       - Parametric and has a distinct training phase to determine cluster centers.
      
-#unit-3
+# unit-3
 ## Detailed Explanations
 
 1. **Find-S Algorithm:**
@@ -140,7 +140,7 @@ The shape of a **normalization curve**, often referring to a normal distribution
    - **Variety**: The different types of data (structured, unstructured, semi-structured).
    - **Veracity**: The quality and accuracy of data.
    - **Value**: The potential insights and benefits derived from analyzing the data.
-#unit-4
+# unit-4
 ## Answers to Your Questions
 
 1. **NumPy Tool:**
@@ -192,7 +192,7 @@ Y-axis
 - **Step 5: Start Using the Twitter API:**
   - Use the generated API keys and tokens in your application to authenticate and make requests to the Twitter API.
 
-#unit-5
+# unit-5
 # Sentiment Analysis and Recommender Systems
 
 ## Definitions and Types
@@ -219,10 +219,10 @@ Y-axis
 
 ## Usage
 These definitions and types of systems are fundamental in building recommendation engines and analyzing sentiments in various applications.
+# long(unit1)
+## Vectors in Machine Learning
 
-# Vectors in Machine Learning
-
-## Definition
+### Definition
 
 Vectors are fundamental mathematical objects used to represent data in machine learning. A vector is essentially an ordered list of numbers, which can represent various data points or features in a multi-dimensional space. In machine learning, vectors are used to represent input features, model parameters, and other numerical data.
 
