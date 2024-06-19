@@ -689,3 +689,157 @@ The main purpose of the train/test split is to provide an unbiased evaluation of
 ### Example using Scikit-Learn (Python)
 ### Summary
 -The train/test split is a crucial technique in machine learning for evaluating model performance on new, unseen data. By splitting the dataset into training and testing sets, training the model on one part, and evaluating it on another, you can assess its generalization capability and avoid overfitting. This approach is straightforward to implement using libraries like Scikit-Learn and is essential for building robust and reliable machine learning models
+
+# K-Nearest Neighbors (K-NN) Algorithm
+
+K-Nearest Neighbors (K-NN) is a simple, non-parametric, and lazy learning algorithm used for both classification and regression. It classifies a data point based on how its neighbors are classified.
+
+### Key Concepts
+
+1. **Non-Parametric:** K-NN does not make any assumptions about the underlying data distribution.
+2. **Lazy Learning:** K-NN does not use the training data points to perform any generalization. Instead, it stores all training data and only makes calculations when a prediction is required.
+
+### How K-NN Works
+
+1. **Choose the number of neighbors \( K \):** This is a hyperparameter that determines how many neighbors are used in the classification or regression.
+2. **Calculate the distance:** Compute the distance between the new data point and all training data points. Common distance metrics include Euclidean, Manhattan, and Minkowski.
+3. **Identify the nearest neighbors:** Select the K training data points that are closest to the new data point.
+4. **Make a prediction:**
+   - **Classification:** Assign the class label that is most common among the K nearest neighbors.
+   - **Regression:** Calculate the average of the values of the K nearest neighbors.
+
+### Example: Classification with K-NN
+
+Consider a dataset with two features, \( x_1 \) and \( x_2 \), and two classes: "Red" and "Blue". We want to classify a new data point based on its nearest neighbors.
+
+#### Dataset
+
+| \( x_1 \) | \( x_2 \) | Class |
+|-----------|-----------|-------|
+| 1         | 1         | Red   |
+| 2         | 2         | Red   |
+| 3         | 3         | Blue  |
+| 6         | 5         | Blue  |
+| 7         | 8         | Red   |
+
+#### New Data Point
+
+Let's classify the new data point \((4, 4)\) using K-NN with \( K = 3 \).
+
+#### Step-by-Step Implementation
+
+1. **Calculate the distance from the new point to all training points:**
+
+   - Distance to \((1, 1)\): \(\sqrt{(4-1)^2 + (4-1)^2} = \sqrt{9 + 9} = \sqrt{18} \approx 4.24\)
+   - Distance to \((2, 2)\): \(\sqrt{(4-2)^2 + (4-2)^2} = \sqrt{4 + 4} = \sqrt{8} \approx 2.83\)
+   - Distance to \((3, 3)\): \(\sqrt{(4-3)^2 + (4-3)^2} = \sqrt{1 + 1} = \sqrt{2} \approx 1.41\)
+   - Distance to \((6, 5)\): \(\sqrt{(4-6)^2 + (4-5)^2} = \sqrt{4 + 1} = \sqrt{5} \approx 2.24\)
+   - Distance to \((7, 8)\): \(\sqrt{(4-7)^2 + (4-8)^2} = \sqrt{9 + 16} = \sqrt{25} = 5\)
+
+2. **Sort the distances:**
+
+   - \((3, 3)\): 1.41
+   - \((6, 5)\): 2.24
+   - \((2, 2)\): 2.83
+   - \((1, 1)\): 4.24
+   - \((7, 8)\): 5
+
+3. **Select the K nearest neighbors (K=3):**
+
+   - \((3, 3)\): Blue
+   - \((6, 5)\): Blue
+   - \((2, 2)\): Red
+
+4. **Determine the majority class among the K neighbors:**
+
+   - Blue: 2
+   - Red: 1
+
+5. **Classify the new data point:**
+
+   - The new data point \((4, 4)\) is classified as **Blue** because it has the majority vote among the nearest neighbors.
+
+### Example: Regression with K-NN
+
+Consider a dataset where we want to predict the value of a new data point based on the average values of its nearest neighbors.
+
+#### Dataset
+
+| \( x_1 \) | \( x_2 \) | Value |
+|-----------|-----------|-------|
+| 1         | 1         | 10    |
+| 2         | 2         | 20    |
+| 3         | 3         | 30    |
+| 6         | 5         | 40    |
+| 7         | 8         | 50    |
+
+#### New Data Point
+
+Let's predict the value for the new data point \((4, 4)\) using K-NN with \( K = 3 \).
+
+#### Step-by-Step Implementation
+
+1. **Calculate the distance from the new point to all training points:**
+
+   - Same distances as calculated in the classification example.
+
+2. **Sort the distances:**
+
+   - Same sorted distances as in the classification example.
+
+3. **Select the K nearest neighbors (K=3):**
+
+   - \((3, 3)\): 30
+   - \((6, 5)\): 40
+   - \((2, 2)\): 20
+
+4. **Calculate the average value of the K nearest neighbors:**
+
+   \[
+   \text{Average value} = \frac{30 + 40 + 20}{3} = \frac{90}{3} = 30
+   \]
+
+5. **Predict the value for the new data point:**
+
+   - The predicted value for the new data point \((4, 4)\) is **30**.
+
+### Summary
+
+- **K-NN Classification:** Predicts the class of a data point based on the majority class among its K nearest neighbors.
+- **K-NN Regression:** Predicts the value of a data point based on the average value among its K nearest neighbors.
+- **Distance Metric:** Commonly used metrics include Euclidean distance, Manhattan distance, and Minkowski distance.
+- **Hyperparameter \( K \):** The choice of \( K \) significantly affects the performance. Small \( K \) can be noisy and sensitive to outliers, while large \( K \) can smooth out the class boundaries.
+
+K-NN is a simple and intuitive algorithm that can be effective for various applications, provided that the choice of \( K \) and the distance metric are carefully considered.
+
+# Four Components of Time Series
+
+A time series is a sequence of data points collected or recorded at time-ordered intervals. Time series analysis involves understanding the underlying components that contribute to the patterns observed in the data. The four main components of a time series are:
+
+1. **Trend:** The long-term movement or direction in the data over an extended period. Trends can be upward, downward, or stationary.
+   
+2. **Seasonality:** Regular, repeating patterns or cycles in the data occurring at specific intervals due to seasonal factors. For example, retail sales might increase during the holiday season every year.
+   
+3. **Cyclic Patterns:** Fluctuations in the data that occur at irregular intervals due to business or economic cycles. These cycles can last from a few months to several years and are different from seasonality as they are not fixed and predictable in the same way.
+   
+4. **Irregular (or Random) Component:** Unpredictable, random variations in the data that do not follow a pattern. These are often due to random noise or unforeseen events and are not easily modeled.
+
+
+### Summary
+
+- **Trend:** Long-term direction in the data.
+- **Seasonality:** Regular, repeating patterns.
+- **Cyclic Patterns:** Irregular, longer-term fluctuations.
+- **Irregular Component:** Random noise.
+
+### Analyzing Time Series Steps
+
+1. Plot the data.
+2. Decompose into components.
+3. Test for stationarity.
+4. Apply transformations if needed.
+5. Model the data.
+6. Make forecasts.
+7. Validate the model.
+
+By understanding and analyzing these components, you can build more accurate and reliable models for time series forecasting.
